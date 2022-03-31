@@ -257,6 +257,7 @@ function getModifiers(options) {
 
 const Tooltip = {
     bind(el, options) {
+        if (!options.value) return;
         el.$_ptooltipModifiers = getModifiers(options);
         if (typeof options.value === 'string') {
             el.$_ptooltipValue = options.value;
@@ -278,6 +279,7 @@ const Tooltip = {
         }
     },
     update(el, options) {
+        if (!options.value) return;
         el.$_ptooltipModifiers = getModifiers(options);
 
         if (typeof options.value === 'string') {
